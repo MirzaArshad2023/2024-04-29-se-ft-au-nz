@@ -1,0 +1,132 @@
+body { 
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+a { 
+    text-decoration: none;
+    color: purple;
+}
+
+.background-1 {
+    background: #68B0AB;
+}
+
+.background-2 {
+    background: #8FC0A9;
+}
+
+.background-3 {
+    background: #C8D5B9;
+}
+
+.background-4 {
+    background: #FAF3DD;
+}
+
+.m-20 {
+    margin: 20px;
+}
+
+.h-80 {
+    height: 80px;
+}
+
+.h-400 {
+    height: 400px;
+}
+
+.w-80 {
+    width: 80px;
+}
+
+/* 2.1. Add a CSS rule for the flex-container class and set it to use a flexbox display model */
+.flex-container {
+    display: flex;
+
+    /* 6.1.	Add a flex-direction property to the flex-container class */
+    flex-direction: column;
+    flex-direction: row;
+}
+
+/* 2.2.	Add rules for the flex-item-1, -2, -3, and -4 classes and set flex: <number> to them accordingly */
+.flex-item-1 {
+    flex: 1;
+}
+
+.flex-item-2 {
+    flex: 2;
+}
+
+.flex-item-3 {
+    flex: 3;
+}
+
+.flex-item-4 {
+    flex: 4;
+}
+
+/* 3.1.	Add a CSS rule for the flex-center class and set values for justify-content and align-items */
+.flex-center {
+    /* 3.2. Your final goal is to center an item within its container both horizontally and vertically */
+    justify-content: center;
+    align-items: center;
+}
+
+/* 4.1.	Add a CSS rule for the flex-space-between class and experiment with different values for the justify-content property */
+.flex-space-between {
+
+    justify-content: space-evenly;
+    justify-content: center;
+    justify-content: flex-end;
+
+    /* 4.2.	Set an appropriate value for justify-content to push the elements to the left and right sides with leftover space in the middle */
+    justify-content: space-between;
+}
+
+/* 5.1.	Add rules for the flex-basis-50 and flex-wrap classes so that the container has flex-wrap: wrap; and flex items have flex-basis set to 50% */
+.flex-wrap {
+    flex-wrap: wrap;
+
+    /* 5.2.	Observe what happens when changing the value for flex-wrap to wrap-reverse */
+    flex-wrap: wrap-reverse;
+}
+
+.flex-basis-item-50 {
+    flex-basis: 50%;
+
+    /* 5.3.	Choose a new value for flex-basis that makes all 4 flex items fit on the one line */
+    flex-basis: 25%; 
+}
+
+/* 7.1.	Add CSS for the flex-menu class and its children to make it look like the screenshot */
+.flex-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+    /* 7.2.	Use the justify-content property to align the menu items to the right */
+    justify-content: flex-end;
+
+    /* 7.3.	Use the justify-content property to align the menu items to the center of the row */
+    justify-content: center;
+}
+
+.flex-menu li {
+    padding: 1em; 
+    margin: 0 1px;
+
+    /* 7.5.	Use the flex-grow property to divide the total space evenly between each menu item, then center them. */
+    flex-grow: 1;
+    text-align: center;
+}
+
+.flex-menu li a {
+    color: black;
+    font-weight: bold;
+}
+
+/* 7.4.	Use the order property to move the FAQs menu item to last */
+.flex-menu .fourth-item {
+    order: 2;
+}

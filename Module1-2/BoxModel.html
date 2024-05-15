@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model</title>
+</head>
+<style>
+    .box{
+        padding: 20px;
+        border: 2px solid black;
+        margin: 40px;
+        width: 200px;
+        height: 200px;
+        text-align: center;
+    }
+    .content-box{
+        box-sizing: content-box;
+        background: lightblue;
+    }
+    .border-box{
+        box-sizing: border-box;
+        background: lightgreen;
+    }
+
+</style>
+<body>
+    <section class="content-box box">
+        <p>First Paragraph content</p>
+        <p>Second Paragraph content</p>
+    </section>
+    <section class="border-box box">
+        <p>First Paragraph content</p>
+        <p>Second Paragraph content</p>
+    </section>
+    <section style="border: 2px solid black; width: 500px; height: 500px; overflow: auto;" >
+        <p>First Paragraph content</p>
+        <p>Second Paragraph content</p>
+    </section>
+</body>
+</html>

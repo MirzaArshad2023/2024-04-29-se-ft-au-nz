@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>Calculator</title>
+</head>
+
+<body>
+    <div class="container">
+        <input type="text" class="result" okey>
+        <table>
+            <tr>
+                <td><input type="button" value="7"></td>
+                <td><input type="button" value="8"></td>
+                <td><input type="button" value="9"></td>
+                <td><input type="button" value="/"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="4"></td>
+                <td><input type="button" value="5"></td>
+                <td><input type="button" value="6"></td>
+                <td><input type="button" value="X"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="1"></td>
+                <td><input type="button" value="2"></td>
+                <td><input type="button" value="3"></td>
+                <td><input type="button" value="-"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="0" ></td>
+                <td><input type="button" value="+" ></td>
+                <td><input type="button" value="Res"></td>
+                <td><input type="button" value="="></td>
+            </tr>
+        </table>
+    </div>
+</body>
+<script>
+    function handleKeyInput(event, op) {
+        console.log(event.target.nodeName);
+        if (event.target.nodeName == 'INPUT') {
+            console.log(`operator: ${op}`);
+            let value = event.target.value;
+            let result = document.querySelector('.result');
+            // // special keys don't append values to the display
+            switch (value) {
+                case "Res":
+                    result.value = '';
+                    return;
+                case "=":
+                    alert(parseInt(result.value));
+                    // this is the only place where the backend is called
+                    // let input = document.querySelector('.calculator-screen > p').innerHTML;
+                    // display.value = Calculate(input);
+                    break;
+                default:
+                    // update display
+                    result.value += value;
+                    // 
+                    break;
+            }
+        }
+    }
+
+    function makeHandler(op) {
+        return function(event) {
+            handleKeyInput(event, op);
+        };
+    }
+
+
+    const operatorButtons = document.querySelectorAll('input[type="button"]');
+    operatorButtons.forEach(button => {
+        const op = button.value;
+        const handler = makeHandler(op);
+        button.addEventListener('click', handler);
+    });
+</script>
+
+</html>
+

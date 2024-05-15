@@ -1,0 +1,22 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms Demo</title>
+</head>
+<body>
+    <form action="./Sample.html">
+        <label for="txtFirstName">First Name:</label>
+        <input type="text" id="txtFirstName" name="txtFirstName"><br>
+        <label for="txtLastName">Last Name</label>
+        <input type="text" id="txtLastName" name="txtLastName"><br>
+        <input type="button" onclick="displayMessage()" value="Submit">
+    </form>
+</body>
+<script>
+    function displayMessage()
+    {
+        alert("Your order will be shipped soon")
+    }
+</script>
+</html>

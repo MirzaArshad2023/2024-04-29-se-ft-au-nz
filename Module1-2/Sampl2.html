@@ -1,0 +1,64 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    nav {
+  border-bottom: 1px solid black;
+}
+
+.crumbs ol {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.crumb {
+  display: inline-block;
+}
+
+.crumb a::after {
+  display: inline-block;
+  color: #000;
+  content: '>';
+  font-size: 80%;
+  font-weight: bold;
+  padding: 0 3px;
+}
+</style>
+<body>
+    <nav class="crumbs">
+        <ol>
+            <li class="crumb"><a href="#">Bikes</li>
+            <li class="crumb"><a href="#">Cars</li>
+            <li class="crumb"><a href="#">Scooters</li>
+        </ol>
+    </nav>
+    <div style="background-color: yellow;">
+        <p>First Paragraph</p>
+        <p>First Paragraph</p>
+        <p>First Paragraph</p>
+    </div>
+    <div style="background-color: blue">
+        <p>First Paragraph</p>
+        
+    </div>
+    <p>
+        This span is an <span style="background-color: blue;">inline-level element</span>; its
+        background has been colored to display both the beginning and end of the
+        element's influence. Input elements, like <input type="radio" /> and
+        <input type="checkbox" />, are also inline-level content.
+    </p>
+    <form>
+        <label>First Name:</label><br>
+        <input type="radio" value="radio"><br>
+        <label>Second Name:</label> <br>
+        <input type="text" value="second">
+
+    </form>
+    <p>
+        22 New Line street<br>Auckland<br>Post Code: 0900<br>New Zealand
+    </p>
+</body>
+</html>

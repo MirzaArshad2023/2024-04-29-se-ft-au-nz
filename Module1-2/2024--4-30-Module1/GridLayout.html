@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <style>
+        .container{
+            background-color: aliceblue;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            column-gap: 5px;
+            row-gap: 2px;
+            width: 50%;
+        }
+        .child{
+            background-color: red;
+            text-align: center;
+            padding: 20px;
+            color: white;
+            font-weight: bold;
+        }
+        @media screen and (min-width: 500px){
+            .container{
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media screen and (min-width: 650px) 
+        {
+            .container{
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
+            }
+        }   
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="child">A</div>
+        <div class="child">B</div>
+        <div class="child">C</div>
+        <div class="child">D</div>
+        <div class="child">E</div>
+    </div>
+</body>
+</html>

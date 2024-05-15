@@ -1,0 +1,5 @@
+console.log("1")
+let timerID = setTimeout(()=> {console.log("2");console.log("3") }, 1000)
+console.log("4")
+console.log("5")
+clearTimeout(timerID)

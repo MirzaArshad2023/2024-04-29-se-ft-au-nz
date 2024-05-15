@@ -1,0 +1,66 @@
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.class1{
+    color: blue;
+    text-transform: capitalize;
+}
+div{
+    background-color: orange;
+    font-size: x-large;
+}
+.divgray
+{
+    background-color: gray;
+    font-size: xx-large;
+}
+#div1{
+    background-color: gray;
+    font-size: xx-large;
+}
+a[title="IOD"]{
+    color: red;
+}
+#p1{
+    background-color: aliceblue;
+    font-size: xx-small;
+}
+H1{
+    color: green;
+}
+H2{
+    color: yellow;
+}
+H4{
+    color: aliceblue;
+}
+H1, H2, H3, H4 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+div.divgray#div1{
+    background-color: blue;
+}
+.class1 p{
+    background-color: yellow;
+}
+.divgray > .class1 {
+    font-size: small;
+}
+a:hover{
+    background-color: green;
+}
+button:active{
+    background-color: orange;
+}
+p::first-line{
+    text-transform: uppercase;
+}
+a::before {
+    content: '***';
+  }
+p::first-letter {
+font-size: 1.5rem;
+font-weight: bold;
+color: brown;
+}
+  
