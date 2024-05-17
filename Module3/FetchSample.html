@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function FetchData()
+    {
+        let jsonObject;
+
+        fetch('https://reqres.in/api/users')
+        .then((response)=> response.json())
+        .then((json)=> { 
+            jsonObject = JSON.parse(json);
+            console.log('success')
+        })
+        .catch((error)=> console.log(`Error occurred: ${error}`))
+        .finally(()=> console.log(`Fetch completed`))
+
+        console.log("My sync code continues to execute")
+        console.log(jsonObject)
+    }
+
+    
+</script>
+<body>
+    <button onclick="FetchData()">Fetch</button>
+</body>
+</html>
