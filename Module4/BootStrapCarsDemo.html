@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>BootStrap Cars</title>
+
+</head>
+<body>
+    <template id="car-template">
+        <div class="card col-8" style="width: 18rem; margin:10px">
+            <div class="card-body">
+                <h5 class="card-title">Car title</h5>
+                <p class="card-text">Car text.</p>
+            </div>
+        </div>
+    </template>
+    <div id="car-list" class="row"></div>
+
+
+</body>
+<script>
+        const carData = [{title: 'Audi', description: 'Audi AG is a German automotive manufacturer of luxury vehicles headquartered in Ingolstadt, Bavaria, Germany.'},
+                    {title: 'Mercedes-Benz', description: 'Mercedes-Benz, commonly referred to as Mercedes, is a German luxury automotive brand.'},
+                    {title: 'BMW', description: 'Bayerische Motoren Werke AG, commonly referred to as BMW, is a German multinational corporate manufacturer of luxury vehicles and motorcycles headquartered in Munich, Bavaria,Germany.'}];
+        function getCars() {
+                return new Promise(resolve => {
+                    setTimeout(function () {
+                        // resolve the promise with the car data after 1s
+                        resolve(carData)
+                    }, 1000)
+                })
+            }
+    // use carData and getCars function from previous slide
+    // clone, then populate, then append a new template
+    function addCard(car) {
+            const template =
+                document.getElementById("car-template").content.cloneNode(true);
+            template.querySelector('.card-title').innerText = car.title;
+            template.querySelector('.card-text').innerText = car.description;
+            document.querySelector('#car-list').appendChild(template);
+        }
+    // get data asynchronously, then use it to populate a template
+    getCars().then( (cars) => cars.forEach(car => addCard(car)) )
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</html>

@@ -1,0 +1,16 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch Sample</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    fetch('https://jsonplaceholder.typicode.com/posts?_limit = 10')
+        .then((response) => response.json())
+        .then((json) => console.log(json));
+</script>
+</html>

@@ -1,0 +1,62 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Template</title>
+</head>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #e3f2fd;
+        }
+    
+        .card {
+            padding: 10px;
+        }
+    
+        .card-title {
+            font-weight: 600;
+            font-size: 3em;
+            padding: 0 0 10px 0;
+        }
+    
+        .card-description {
+            font-weight: 400;
+            font-size: 2em
+        }
+    </style>
+<body>
+    <template id="card-template">
+        <div class="card">
+            <div class="card-body">
+                <div class="card-title">
+
+                </div>
+                <div class="card-description">
+
+                </div>
+            </div>
+        </div>
+    </template>
+    <div id="card-list" ></div>
+</body>
+<script>
+        function addCard(cardTitle, cardText) {
+            // clone the template
+            const template =
+                document.getElementById("card-template")
+                    .content.cloneNode(true);
+            // populate the template
+            template.querySelector('.card-title').innerText =
+                cardTitle;
+            template.querySelector('.card-description').innerText =
+                cardText;
+            // include the populated template into the page
+            document.querySelector('#card-list')
+                .appendChild(template);
+        }
+        addCard("Mirza", "Trainer at IOD")
+        addCard("Bill gates", "CEO of Microsoft")
+</script>    
+</html>
