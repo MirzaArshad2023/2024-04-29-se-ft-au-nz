@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Calculator</h1>
+    <label>Number1:
+        <input type="text" id="txtNum1">
+    </label><br>
+    <label>Number2:
+        <input type="text" id="txtNum2">
+    </label><br>
+    <button onclick="ServerCalculator()">Add</button><br>
+    <label>Result:</label><label id="lblResult"></label>
+</body>
+<script>
+    function ServerCalculator()
+    {
+        let num1 = document.getElementById("txtNum1").value
+        let num2 = document.getElementById("txtNum2").value
+
+        fetch(`http://localhost:3000/Calculator/Add?num1=${num1}&num2=${num2}`)
+        .then((response)=>response.json())
+        .then((result)=>document.getElementById("lblResult").innerText = result.res)
+    }
+
+</script>
+</html>
