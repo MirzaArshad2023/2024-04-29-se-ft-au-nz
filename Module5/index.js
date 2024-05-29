@@ -1,8 +1,13 @@
 const express = require('express')
 const app = require('./app')
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.json');
 const myAppRouter = require('./routes/myAppRoutes')
 
 const userRouter = require('./routes/userRoutes')
+
+
+
 //const app2 = express()
 const cors = require('cors')
 
@@ -15,6 +20,7 @@ app.use('/Test', myAppRouter)
 
 app.use('/users', userRouter)
 
+app.use('/api-docs',swaggerUi.serve,swaggerUi.setup(swaggerDocument));
 
 app.listen(port, ()=> {
     console.log(`Server has started and listening incoming request on port ${port}`)
