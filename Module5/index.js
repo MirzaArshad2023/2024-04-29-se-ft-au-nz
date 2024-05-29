@@ -1,7 +1,8 @@
-const express = require('express')
-const app = express()
+
+
+const app = require('./app')
 const myAppRouter = require('./routes/myAppRoutes')
-const calRouter = require('./routes/calculatorRoutes')
+
 const userRouter = require('./routes/userRoutes')
 //const app2 = express()
 const cors = require('cors')
@@ -12,7 +13,7 @@ app.use(express.json())
 app.use(cors())
 app.use('/Test', myAppRouter)
 
-app.use('/Calculator', calRouter)
+
 app.use('/users', userRouter)
 
 
