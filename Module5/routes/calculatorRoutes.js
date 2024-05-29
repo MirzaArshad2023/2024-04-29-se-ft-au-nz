@@ -1,22 +1,17 @@
 const express = require('express')
+const calcController = require('../Controllers/calculatorController')
 const calculatorRouter = express.Router()
 
 calculatorRouter.get('/Add', (req, res)=>{
     
-    let number1 = parseInt(req.query.num1);
-    let number2 = parseInt(req.query.num2);
-    let result = number1 + number2;
-    res.status(200)
-    res.send({res: result})
+    calcController.Add(req, res)
+    
 })
 
 calculatorRouter.get('/Multiply', (req, res)=>{
     
-    let number1 = parseInt(req.query.num1);
-    let number2 = parseInt(req.query.num2);
-    let result = number1 * number2;
-    res.status(200)
-    res.send({res: result})
+   calcController.Multiply(req, res)
+   
 })
 
 module.exports = calculatorRouter
