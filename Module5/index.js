@@ -1,5 +1,4 @@
-
-
+const express = require('express')
 const app = require('./app')
 const myAppRouter = require('./routes/myAppRoutes')
 
