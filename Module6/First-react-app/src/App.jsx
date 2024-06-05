@@ -12,8 +12,16 @@ import Pet from './Pet'
 import Books from './Books'
 import FullName from './FullName'
 import ComplexComment from './ComplexComment'
+import Callout from './Callout'
+import MoviesList from './MovieList'
+import MoodChanger from './MoodChanger'
+import BirthdayTranslator from './BirthdayTranslator'
+import Weather from './Weather'
+import LoginForm from './LoginForm'
+import LoginFormUncontrolled from './LoginFormUncontrolled'
 function App() {
 
+  const [display, setDisplay] = useState('show');
   // object storing comment data - passed as props
   const comment = {
     date: new Date(),
@@ -23,10 +31,38 @@ function App() {
       avatarUrl: 'https://placekitten.com/200/300',
     },
   };
+   
+  function DisplayHide(behavior)
+  {
+    setDisplay(behavior)
+    
+  }
+  console.log('component rendered')
+  const jsxToUpdate = (display =='show')? <MoodChanger></MoodChanger> : null
   return (
     <>
-    <ComplexComment author={comment.author} text={comment.text} date={comment.date}></ComplexComment>
+    <LoginForm></LoginForm>
+    <br></br>
+    <label>Uncontrolled Form</label>
+    <br></br>
+    <LoginFormUncontrolled></LoginFormUncontrolled>
     {/*
+    <Weather></Weather>
+    <MoviesList></MoviesList>
+    <BirthdayTranslator></BirthdayTranslator>
+     {jsxToUpdate}
+    <div>
+      State value is {display}
+      <button onClick={()=> DisplayHide('hide')}>Hide</button>
+      <button onClick={()=> DisplayHide('show')}>Show</button>
+    </div>
+   
+    <Callout title="Nested React Component" message="Simple message with a fancy box applied via composition">
+      <FullName first='Elon' last='Musk'></FullName>
+    </Callout>
+
+    <ComplexComment author={comment.author} text={comment.text} date={comment.date}></ComplexComment>
+    
     <FullName first='Mirza' last='Arshad'></FullName>
     <Books></Books>
     
