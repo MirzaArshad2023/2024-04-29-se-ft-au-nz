@@ -1,6 +1,7 @@
 import './App.css'
 import Movie from './Movie';
 import { useState } from 'react';
+import AddMovieForm from './AddMovieForm';
 
 function MoviesList() {
     // collection of objects representing movies
@@ -27,11 +28,16 @@ function MoviesList() {
 
     const [currentMovies, setCurrentMovies] = useState(movies)
 
-    function AddMovie(movieTitle, movieYear, movieSynonpsis)
+  /*  function AddMovie(movieTitle, movieYear, movieSynonpsis)
     {
         //alert(movieTitle)
         movies.push({id:4, title: movieTitle, year: movieYear, synopsis: movieSynonpsis})
         setCurrentMovies(movies)
+    }*/
+    function handleAddMovie(newMovie)
+    {
+        newMovie.id = currentMovies.length + 1
+        setCurrentMovies([...currentMovies, newMovie])
     }
     function ReverseMovies()
     {
@@ -46,10 +52,10 @@ function MoviesList() {
                 {movieItems}
             </ul>
             <div>
-                <button onClick={()=> AddMovie("Titanic", 1999, "Ship that sank")}>Add Movie</button>
+                <button onClick={()=> ReverseMovies()}>Reverse</button>
             </div>
             <div>
-                <button onClick={()=> ReverseMovies()}>Reverse</button>
+                <AddMovieForm onMovieAdded={handleAddMovie}></AddMovieForm>
             </div>
         </div>
     )

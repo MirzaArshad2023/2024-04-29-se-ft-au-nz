@@ -19,6 +19,8 @@ import BirthdayTranslator from './BirthdayTranslator'
 import Weather from './Weather'
 import LoginForm from './LoginForm'
 import LoginFormUncontrolled from './LoginFormUncontrolled'
+import ExplodingBomb from './ExplodingBomb'
+import Counter from './Counter'
 function App() {
 
   const [display, setDisplay] = useState('show');
@@ -37,18 +39,31 @@ function App() {
     setDisplay(behavior)
     
   }
-  console.log('component rendered')
+
   const jsxToUpdate = (display =='show')? <MoodChanger></MoodChanger> : null
   return (
     <>
-    <LoginForm></LoginForm>
-    <br></br>
+    
+       
+        {/*
+         <Counter></Counter>
+        <MoviesList></MoviesList>
+        <ExplodingBomb></ExplodingBomb>
     <label>Uncontrolled Form</label>
     <br></br>
+        
+   
+
     <LoginFormUncontrolled></LoginFormUncontrolled>
-    {/*
+   
+    
+  
+    <LoginForm></LoginForm>
+    <br></br>
+    
+   
     <Weather></Weather>
-    <MoviesList></MoviesList>
+    
     <BirthdayTranslator></BirthdayTranslator>
      {jsxToUpdate}
     <div>
