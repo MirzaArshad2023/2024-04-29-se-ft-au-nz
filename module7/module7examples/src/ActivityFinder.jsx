@@ -1,27 +1,26 @@
 import { useState, useEffect } from "react";
+import { useData } from "./Hooks/useData";
+import { useContext } from "react";
+import { UserContext } from "./UserProvider";
 
 function ActivityFinder() { // Fetches a random activity
     
     const [participants, setParticipants] = useState(1);
+    const {currentUser, handleUpdateUser} = useContext(UserContext)
+    //const [activity, setActivity] = useState('');
 
-    const [activity, setActivity] = useState('');
+    const data = useData('https://fakestoreapi.com/products/' + participants)
 
-    useEffect(() => {
-        let ignore = false;
-        console.log('use effect runs')
-        fetch('https://fakestoreapi.com/products/' + participants)
-            .then(response => response.json())
-            .then(json => {
-            if(!ignore)
-                setActivity(json.category);
-            });
+    let activity = data? data.category : 'not found'
 
-        return () => {
-            ignore = true
-            console.log('cleanup called')
-        }
-    }, [participants]);
-
+    if(currentUser.email)
+    {
+        //do nothing
+    }
+    else
+        return (<> </>)
+    
+   
     return (
         <div className="ActivityFinder componentBox">
             <h3>Activity Finder</h3>
