@@ -13,6 +13,8 @@ import SubscribeForm from './SubscribeForm'
 import UserProvider from './UserProvider'
 import LoginForm from './LoginForm'
 import MyThemeProvider from './MyThemeProvider'
+import AppRoutes from './AppRoutes'
+import NavBar from './NavBar'
 function App() {
   
 
@@ -20,11 +22,14 @@ function App() {
     <>
     <MyThemeProvider>
       <UserProvider>
-          <LoginForm></LoginForm>
-          <ActivityFinder></ActivityFinder>
+         <NavBar></NavBar>
+         <AppRoutes></AppRoutes>
       </UserProvider>
     </MyThemeProvider>
     {/*
+     <LoginForm></LoginForm>
+          <ActivityFinder></ActivityFinder>
+          <a href='https://www.google.com'>Subscribe</a>
     <PostListReducer></PostListReducer>
     <ReducerCounter></ReducerCounter>
       <VideoPlayer></VideoPlayer>

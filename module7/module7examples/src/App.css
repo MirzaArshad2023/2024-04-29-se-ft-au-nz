@@ -40,3 +40,23 @@
 .read-the-docs {
   color: #888;
 }
+
+.NavBar ul {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  padding: 0;
+}
+
+.NavBar ul li a {
+  padding: 1em;
+  color: inherit;
+  text-transform:
+    uppercase;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.NavBar ul li a.active {
+  font-weight: bold;
+}
